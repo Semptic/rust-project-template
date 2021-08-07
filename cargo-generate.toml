@@ -1,0 +1,3 @@
+[placeholders.description]
+type = "string"
+prompt = "What is the description of your cli tool?"
