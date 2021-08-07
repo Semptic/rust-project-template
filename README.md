@@ -8,6 +8,8 @@ cargo generate --git semptic/rust-cli-template
 
 It also creates github workflows for coverage and tests. If you don't want this delete the `.github/workflows` folder.
 
+You must add a license file in `./LICENSE` after generating from the template.
+
 Everything above the following line should be deleted once generated.
 ---
 
