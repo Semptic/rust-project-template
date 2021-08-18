@@ -4,7 +4,7 @@ use thiserror::Error;
 
 #[derive(Error, Debug, PartialEq)]
 pub enum {{crate_name | pascal_case}}Error {
-    #[error("I will not say 'Hello, {0:#?}.'!")]
+    #[error("I will not say 'Hello, {0}.'!")]
     HelloWorldError(String),
     #[error("Unknown {{project-name}} Error")]
     Unknown,
