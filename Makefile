@@ -18,3 +18,6 @@ test: check
 publish: check-fmt test clippy
 	cd core; cargo publish && \
 	cd ../cli; cargo publish 
+
+install:
+	cargo install --path cli
