@@ -32,7 +32,7 @@ fn main() -> Result<()> {
 
     debug!("{:#?}", *OPT);
 
-    hello(&OPT.name.as_str()).context("Failed to say hello")?;
+    hello(OPT.name.as_str()).context("Failed to say hello")?;
 
     Ok(())
 }
