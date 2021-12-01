@@ -1,0 +1,32 @@
+[env]
+TEST_TARGET_DIR = './_test'
+
+[config]
+default_to_workspace = false
+
+[tasks.install-generate]
+private = true
+command = "cargo"
+args = ["generate", "--version"]
+
+[tasks.apply-template]
+private = true
+dependencies = ["install-generate"]
+script = '''
+  mkdir -p ${TEST_TARGET_DIR}
+  cd ${TEST_TARGET_DIR}
+  cargo generate --path ../ -n test_project -d description="This is a test for the cli template"
+  cd test-project
+  # Make sure Template makefile is not existent
+  grep -Fxq "# test-project" README.md || exit 1
+  grep -Fxq "This is a test for the cli template" README.md || exit 1
+  makers test
+'''
+
+[tasks.test-template]
+run_task = { name = ["apply-template"], fork = true, cleanup_task = "cleanup" }
+
+[tasks.cleanup]
+script = '''
+  rm -rf ${TEST_TARGET_DIR}
+'''
