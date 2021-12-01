@@ -30,11 +30,11 @@ mod tests {
     #[test]
     fn hello_world_error() {
         assert_eq!(
-            hello("World"), 
+            hello("World"),
             Err({{crate_name | pascal_case}}Error::HelloWorldError("World".to_string()))
         );
         assert_eq!(
-            hello("wOrld"), 
+            hello("wOrld"),
             Err({{crate_name | pascal_case}}Error::HelloWorldError("wOrld".to_string()))
         );
     }

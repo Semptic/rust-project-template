@@ -38,10 +38,7 @@ fn main() -> Result<()> {
 }
 
 #[derive(Debug, StructOpt)]
-#[structopt(
-    name = "{{project-name}}",
-    about = "{{description}}"
-)]
+#[structopt(name = "{{project-name}}", about = "{{description}}")]
 struct Opt {
     #[structopt(flatten)]
     verbosity: clap_verbosity_flag::Verbosity,

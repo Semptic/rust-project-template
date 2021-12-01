@@ -6,8 +6,7 @@ default_to_workspace = false
 
 [tasks.install-generate]
 private = true
-command = "cargo"
-args = ["generate", "--version"]
+install_crate = { crate_name = "cargo-generate", rustup_component_name = "cargo-generate", binary = "cargo-generate", test_arg = "--version" }
 
 [tasks.apply-template]
 private = true
@@ -20,6 +19,7 @@ script = '''
   # Make sure Template makefile is not existent
   grep -Fxq "# test-project" README.md || exit 1
   grep -Fxq "This is a test for the cli template" README.md || exit 1
+  makers check-format
   makers test
 '''
 

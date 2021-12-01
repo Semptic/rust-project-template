@@ -11,3 +11,14 @@ If you want to attach some badges, comment them out. You need to adapt the parts
 # {{project-name}}
 
 {{description}}
+
+## Prerequisite
+
+You need to have [cargo-make](https://github.com/sagiegurari/cargo-make) installed. 
+
+## Test
+
+To test this project run
+```bash
+makers test
+```
