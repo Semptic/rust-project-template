@@ -2,11 +2,5 @@
 type = "string"
 prompt = "What is the description of your cli tool?"
 
-[template]
-ignore = [
-  "LICENSE",
-  "Makefile.toml"
-]
-
 [hooks]
-post = ["post.rhai"]
+post = ["pre.rhai"]

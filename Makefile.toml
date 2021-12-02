@@ -21,8 +21,14 @@ dependencies = ["apply-template"]
 script = '''
   cd ${TEST_TARGET_DIR}/test-project
   # Make sure Template makefile is not existent
-  grep -Fxq "# test-project" README.md || exit 1
-  grep -Fxq "This is a test for the cli template" README.md || exit 1
+  if ! grep -Fxq "# test-project" README.md; then
+    echo "ERROR README.md missing the project title"
+    exit 1
+  fi
+  if !grep -Fxq "This is a test for the cli template" README.md; then
+    echo "ERROR README.md is missing the project description"
+    exit 1
+  fi
   cargo make check-format
   cargo make test
 '''
