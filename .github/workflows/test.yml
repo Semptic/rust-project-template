@@ -19,4 +19,4 @@ jobs:
       - uses: davidB/rust-cargo-make@v1
       - uses: actions/checkout@v1
       - name: Run tests
-        run: cargo make test
+        run: cargo make test-template
