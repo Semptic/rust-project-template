@@ -18,8 +18,8 @@ script = '''
   # Make sure Template makefile is not existent
   grep -Fxq "# test-project" README.md || exit 1
   grep -Fxq "This is a test for the cli template" README.md || exit 1
-  makers check-format
-  makers test
+  cargo make check-format
+  cargo make test
 '''
 
 [tasks.test-template]
