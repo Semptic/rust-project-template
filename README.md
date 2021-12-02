@@ -1,4 +1,5 @@
-# Rust Project template
+[![GitHub](https://img.shields.io/github/license/Semptic/rust-project-template)](https://github.com/Semptic/rust-project-template/blob/main/LICENSE)
+[![test](https://github.com/Semptic/rust-project-template/actions/workflows/test.yml/badge.svg)](https://github.com/Semptic/rust-project-template/actions/workflows/test.yml)# Rust Project template
 
 This is a template for [cargo-generate](https://github.com/cargo-generate/cargo-generate) to create CLI applications. To use it run:
 
