@@ -1,4 +1,3 @@
-#[macro_use]
 extern crate ansi_term;
 extern crate clap_verbosity_flag;
 extern crate loggerv;
