@@ -14,7 +14,12 @@ script = '''
   mkdir -p ${TEST_TARGET_DIR}
   cd ${TEST_TARGET_DIR}
   cargo generate --path ../ -n test_project -d description="This is a test for the cli template"
-  cd test-project
+'''
+
+[tasks.run-template-test]
+dependencies = ["apply-template"]
+script = '''
+  cd ${TEST_TARGET_DIR}/test-project
   # Make sure Template makefile is not existent
   grep -Fxq "# test-project" README.md || exit 1
   grep -Fxq "This is a test for the cli template" README.md || exit 1
@@ -23,7 +28,7 @@ script = '''
 '''
 
 [tasks.test-template]
-run_task = { name = ["apply-template"], fork = true, cleanup_task = "cleanup" }
+run_task = { name = ["run-template-test"], fork = true, cleanup_task = "cleanup" }
 
 [tasks.cleanup]
 script = '''
