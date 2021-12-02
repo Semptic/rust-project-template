@@ -24,8 +24,6 @@ log = "~0.4"
 loggerv = "~0.7"
 ansi_term = "~0.12"
 
-lazy_static = "~1.4"
-
 clap-verbosity-flag = "~0.3"
 structopt = "~0.3"
 
