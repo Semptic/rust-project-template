@@ -26,3 +26,17 @@ fn hello_john() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
+
+#[test]
+fn test_add() -> Result<(), Box<dyn std::error::Error>> {
+    let mut cmd = Command::cargo_bin("{{project-name}}")?;
+
+    cmd.args(["-vv", "John"]);
+
+    cmd.assert()
+        .success()
+        .stdout(predicate::str::contains("Hello, John."))
+        .stderr(predicate::str::contains("1 + 1 = 2"));
+
+    Ok(())
+}

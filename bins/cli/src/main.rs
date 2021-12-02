@@ -5,8 +5,9 @@ extern crate clap_verbosity_flag;
 extern crate loggerv;
 use anyhow::{Context, Result};
 
-use log::debug;
-use {{crate_name}}_lib::hello;
+use log::{debug, info};
+use {{crate_name}}_lib_a::hello;
+use {{crate_name}}_lib_b::add;
 
 use structopt::StructOpt;
 
@@ -33,6 +34,8 @@ fn main() -> Result<()> {
     debug!("{:#?}", *OPT);
 
     hello(OPT.name.as_str()).context("Failed to say hello")?;
+
+    info!("1 + 1 = {}", add(1, 1).context("Failed to add 1 and 1")?);
 
     Ok(())
 }

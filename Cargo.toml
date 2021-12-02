@@ -1,6 +1,6 @@
 [workspace]
 
 members = [
-  "lib",
-  "cli"
+  "libs/lib-a",
+  "bins/cli"
  ]

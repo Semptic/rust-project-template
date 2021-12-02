@@ -4,9 +4,9 @@ description = "{{description}}"
 version = "0.1.0"
 authors = ["{{authors}}"]
 edition = "2018"
-license-file = "../LICENSE"
-readme = "../README.md"
-workspace = ".."
+license-file = "../../LICENSE"
+readme = "../../README.md"
+workspace = "../.."
 
 [[bin]]
 name="{{project-name}}"
@@ -15,7 +15,8 @@ path="src/main.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-{{project-name}}-lib = { path = "../lib", version = "0.1.0"  }
+{{project-name}}-lib-a = { path = "../../libs/lib-a", version = "0.1.0"  }
+{{project-name}}-lib-b = { path = "../../libs/lib-b", version = "0.1.0"  }
 
 anyhow = "~1.0"
 

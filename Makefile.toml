@@ -9,7 +9,6 @@ private = true
 install_crate = { crate_name = "cargo-generate", rustup_component_name = "cargo-generate", binary = "cargo-generate", test_arg = "--version" }
 
 [tasks.apply-template]
-private = true
 dependencies = ["install-generate"]
 script = '''
   mkdir -p ${TEST_TARGET_DIR}
