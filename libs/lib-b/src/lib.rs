@@ -1,4 +1,4 @@
-use log::{debug, info};
+use log::info;
 
 use thiserror::Error;
 
@@ -11,7 +11,7 @@ pub enum {{crate_name | pascal_case}}Error {
 pub type ResultT<T> = Result<T, {{crate_name | pascal_case}}Error>;
 
 pub fn add(number_1: i64, number_2: i64) -> ResultT<i64> {
-    info!("I'm going to add {} and {}", number_1, number_2);
+    debug!("I'm going to add {} and {}", number_1, number_2);
     Ok(number_1 + number_2)
 }
 
