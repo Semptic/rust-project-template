@@ -1,0 +1,4 @@
+[tasks.clippy]
+dependencies = ["build", "format"]
+command = "cargo"
+args = ["clippy"]

@@ -30,6 +30,7 @@ script = '''
     exit 1
   fi
   cargo make check-format
+  cargo make clippy
   cargo make test
 '''
 
