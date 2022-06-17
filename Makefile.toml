@@ -29,6 +29,14 @@ script = '''
     echo "ERROR README.md is missing the project description"
     exit 1
   fi
+  if [ ! -f ".github/dependabot.yml" ]; then
+    echo "ERROR .github/dependabot.yml is missing"
+    exit 1
+  fi
+  if [ -d ".github/workflows" ]; then
+    echo "ERROR .github/workflows should not exist"
+    exit 1
+  fi
   cargo make check-format
   cargo make clippy
   cargo make test

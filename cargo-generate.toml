@@ -4,7 +4,8 @@ prompt = "What is the description of your cli tool?"
 
 [template]
 ignore = [
-  ".github",
+  ".github/dependabot.yml",
+  ".github/workflows/",
 ]
 
 [hooks]
