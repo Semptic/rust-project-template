@@ -24,8 +24,8 @@ log = "~0.4"
 loggerv = "~0.7"
 ansi_term = "~0.12"
 
-clap-verbosity-flag = "~0.3"
-structopt = "~0.3"
+clap-verbosity-flag = "~1.0"
+clap = { version = "3.2.5", features = ["derive"] }
 
 [dev-dependencies]
 assert_cmd = "2"

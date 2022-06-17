@@ -7,21 +7,21 @@ use log::{debug, info};
 use {{crate_name}}_lib_a::hello;
 use {{crate_name}}_lib_b::add;
 
-use structopt::StructOpt;
+use clap::Parser;
 
 fn main() -> Result<()> {
-    let opt = Opt::from_args();
+    let args = Args::parse();
 
-    setup(&opt).context("Failed to setup application environment")?;
+    setup(&args).context("Failed to setup application environment")?;
 
-    hello(opt.name.as_str()).context("Failed to say hello")?;
+    hello(args.name.as_str()).context("Failed to say hello")?;
 
     info!("1 + 1 = {}", add(1, 1).context("Failed to add 1 and 1")?);
 
     Ok(())
 }
 
-fn setup(opt: &Opt) -> Result<()> {
+fn setup(opt: &Args) -> Result<()> {
     #[cfg(windows)]
     ansi_term::enable_ansi_support().context("Failed to enable ansi support")?;
 
@@ -42,9 +42,9 @@ fn setup(opt: &Opt) -> Result<()> {
     Ok(())
 }
 
-#[derive(Debug, StructOpt)]
-#[structopt(name = "{{project-name}}", about = "{{description}}")]
-struct Opt {
+#[derive(Parser, Debug)]
+#[clap(author, version, about, long_about = None, name = "{{project-name}}", about = "{{description}}")]
+struct Args {
     #[structopt(flatten)]
     verbosity: clap_verbosity_flag::Verbosity,
 
