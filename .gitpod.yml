@@ -1,0 +1,10 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: cargo build
+
+vscode:
+  extensions:
+    - vsrs.cross-rust-analyzer
+    - rust-lang.rust

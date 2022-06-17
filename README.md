@@ -11,6 +11,8 @@ cargo generate --git https://github.com/Semptic/rust-project-template.git
 
 It also creates github workflows for coverage and tests. If you don't want this delete the `workflows` folder otherwise move the `workflows` folder into `.github/`.
 
+This also adds a ready to go [gitpod](https://gitpod.io/) configuration.
+
 You must add a license file in `./LICENSE` after generating from the template.
 
 
