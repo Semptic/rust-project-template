@@ -21,9 +21,7 @@ setup
 
 cd $TEST_TARGET_DIR
 
-cargo +$TOOLCHAIN generate --path $SCRIPT_PATH -n test_project -d description="This is a test for the cli template"
-
-cd test-project
+cargo +$TOOLCHAIN generate --verbose --init --path $SCRIPT_PATH -n test_project -d description="This is a test for the cli template"
 
 pwd
 ls
