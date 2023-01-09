@@ -4,7 +4,7 @@ set -e
 
 TOOLCHAIN='stable'
 
-SCRIPT_PATH=$(dirname "$0")
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 TEST_TARGET_DIR=$(mktemp -d)
 
 function setup() {
@@ -19,12 +19,14 @@ trap cleanup EXIT
 
 setup
 
+echo $SCRIPT_DIR
+
 cd $TEST_TARGET_DIR
 
-cargo +$TOOLCHAIN generate --verbose --init --path $SCRIPT_PATH -n test_project -d description="This is a test for the cli template"
+cargo +$TOOLCHAIN generate --verbose --init --path $SCRIPT_DIR -n test_project -d description="This is a test for the cli template"
 
-echo $SCRIPT_PATH
-ls $SCRIPT_PATH
+ls $SCRIPT_DIR
+
 pwd
 ls
 cat README.md
