@@ -16,7 +16,15 @@ jobs:
         with:
           toolchain: stable
           override: true
-      - uses: davidB/rust-cargo-make@v1
+          components: rustfmt, clippy
+      - uses: actions-rs/install@v0.1
+        with:
+          crate: cargo-make
+          version: latest
+      - uses: actions-rs/install@v0.1
+        with:
+          crate: cargo-generate
+          version: latest
       - uses: actions/checkout@v3
       - name: Run tests
-        run: cargo make test-template
+        run: ./test-template.sh
