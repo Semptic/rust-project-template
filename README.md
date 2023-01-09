@@ -19,6 +19,7 @@ You must add a license file in `./LICENSE` after generating from the template.
 ## Test the template
 
 Run the following command to test the template:
+
 ```bash
-makers test-template
+./test-template.sh
 ```
