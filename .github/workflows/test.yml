@@ -18,7 +18,7 @@ jobs:
           override: true
       - uses: actions-rs/install@v0.1
         with:
-          crate: make
+          crate: cargo-make
           version: latest
           use-tool-cache: true
       - uses: actions-rs/install@v0.1
