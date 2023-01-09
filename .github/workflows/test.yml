@@ -16,6 +16,7 @@ jobs:
         with:
           toolchain: stable
           override: true
+          components: fmt, clippy
       - uses: actions-rs/install@v0.1
         with:
           crate: cargo-make
@@ -24,11 +25,6 @@ jobs:
       - uses: actions-rs/install@v0.1
         with:
           crate: cargo-generate
-          version: latest
-          use-tool-cache: true
-      - uses: actions-rs/install@v0.1
-        with:
-          crate: 
           version: latest
           use-tool-cache: true
       - uses: actions/checkout@v3
