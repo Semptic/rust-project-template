@@ -4,7 +4,7 @@ set -e
 
 SCRIPT_PATH=$(dirname "$0")
 
-TEST_TARGET_DIR='./_test'
+TEST_TARGET_DIR='/tmp/_test'
 TOOLCHAIN='stable'
 
 function setup() {
@@ -26,7 +26,9 @@ cargo +$TOOLCHAIN generate --path $SCRIPT_PATH -n test_project -d description="T
 cd test-project
 
 pwd
+ls
 cat README.md
+
 # Make sure correct reamdme is produced
 if ! grep -Fxq "# test-project" README.md; then
   echo "ERROR README.md missing the project title"
