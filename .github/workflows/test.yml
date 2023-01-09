@@ -16,7 +16,7 @@ jobs:
         with:
           toolchain: stable
           override: true
-          components: fmt, clippy
+          components: rustfmt, clippy
       - uses: actions-rs/install@v0.1
         with:
           crate: cargo-make
