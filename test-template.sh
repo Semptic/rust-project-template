@@ -2,17 +2,17 @@
 
 set -e
 
-SCRIPT_PATH=$(dirname "$0")
-
-TEST_TARGET_DIR='/tmp/_test'
 TOOLCHAIN='stable'
+
+SCRIPT_PATH=$(dirname "$0")
+TEST_TARGET_DIR=$(mktemp -d)
 
 function setup() {
   mkdir -p $TEST_TARGET_DIR
 }
 
 function cleanup() {
-  rm -rf "$SCRIPT_PATH/$TEST_TARGET_DIR"
+  rm -rf $TEST_TARGET_DIR
 }
 
 trap cleanup EXIT
