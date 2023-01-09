@@ -19,17 +19,9 @@ trap cleanup EXIT
 
 setup
 
-echo $SCRIPT_DIR
-
 cd $TEST_TARGET_DIR
 
-cargo +$TOOLCHAIN generate --verbose --init --path $SCRIPT_DIR -n test_project -d description="This is a test for the cli template"
-
-ls $SCRIPT_DIR
-
-pwd
-ls
-cat README.md
+cargo +$TOOLCHAIN generate --init --path $SCRIPT_DIR -n test_project -d description="This is a test for the cli template"
 
 # Make sure correct reamdme is produced
 if ! grep -Fxq "# test-project" README.md; then
