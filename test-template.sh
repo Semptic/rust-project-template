@@ -25,6 +25,8 @@ cargo +$TOOLCHAIN generate --path $SCRIPT_PATH -n test_project -d description="T
 
 cd test-project
 
+pwd
+cat README.md
 # Make sure correct reamdme is produced
 if ! grep -Fxq "# test-project" README.md; then
   echo "ERROR README.md missing the project title"
