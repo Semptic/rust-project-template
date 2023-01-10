@@ -28,10 +28,17 @@ jobs:
         with:
           crate: cargo-make
           version: latest
+      - uses: actions-rs/install@v0.1
+        with:
+          crate: cargo-outdated
+          version: latest
       - run: |
+          set -e 
+
           mv $PROJECT_NAME ${{ runner.temp }}/
           cd ${{ runner.temp }}/$PROJECT_NAME
 
           cargo make check-format
           cargo make clippy
           cargo make test
+          cargo outdated --exit-code 1
