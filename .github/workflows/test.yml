@@ -27,7 +27,7 @@ jobs:
       - uses: cargo-generate/cargo-generate-action@v0.11.0
         with:
           name: ${{ env.PROJECT_NAME }}
-          other: "--define description='This is a test for the cli template'"
+          other: "--define description=\"This is a test for the cli template\""
       - run: |
           mv $PROJECT_NAME ${{ runner.temp }}/
           cd ${{ runner.temp }}/$PROJECT_NAME
