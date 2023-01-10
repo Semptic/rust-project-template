@@ -11,7 +11,10 @@ jobs:
   Test:
     name: Test
     runs-on: ubuntu-latest
+    env:
+      PROJECT_NAME: test-project
     steps:
+      - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
@@ -21,10 +24,14 @@ jobs:
         with:
           crate: cargo-make
           version: latest
-      - uses: actions-rs/install@v0.1
+      - uses: cargo-generate/cargo-generate-action@v0.11.0
         with:
-          crate: cargo-generate
-          version: latest
-      - uses: actions/checkout@v3
-      - name: Run tests
-        run: ./test-template.sh
+          name: ${{ env.PROJECT_NAME }}
+          other: "--define description='This is a test for the cli template'"
+      - run: |
+          mv $PROJECT_NAME ${{ runner.temp }}/
+          cd ${{ runner.temp }}/$PROJECT_NAME
+
+          cargo make check-format
+          cargo make clippy
+          cargo make test
