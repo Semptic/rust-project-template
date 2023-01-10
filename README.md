@@ -9,9 +9,9 @@ This is a template for [cargo-generate](https://github.com/cargo-generate/cargo-
 cargo generate --git https://github.com/Semptic/rust-project-template.git
 ```
 
-It also creates github workflows for coverage and tests. If you don't want this delete the `workflows` folder otherwise move the `workflows` folder into `.github/`.
+It also creates github workflows and dependabot congi. If you don't want this delete the `.github/` folder.
 
-This also adds a ready to go [gitpod](https://gitpod.io/) configuration.
+This also adds a ready to go [gitpod](https://gitpod.io/) configuration, if you don't need this just delete the `.gitpod.yaml` and `.gitpod.Dockerfile` files.
 
 You must add a license file in `./LICENSE` after generating from the template.
 
