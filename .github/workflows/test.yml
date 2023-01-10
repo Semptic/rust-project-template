@@ -34,7 +34,8 @@ jobs:
         with:
           crate: cargo-outdated
           version: latest
-      - run: |
+      - name: Test template
+        run: |
           set -e 
 
           mv $PROJECT_NAME ${{ runner.temp }}/
