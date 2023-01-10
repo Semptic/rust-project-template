@@ -24,10 +24,7 @@ jobs:
         with:
           name: ${{ env.PROJECT_NAME }}
           other: "--define description=Bar"
-      - uses: actions-rs/install@v0.1
-        with:
-          crate: cargo-make
-          version: latest
+      - uses: davidB/rust-cargo-make@v1
       - run: |
           mv $PROJECT_NAME ${{ runner.temp }}/
           cd ${{ runner.temp }}/$PROJECT_NAME
