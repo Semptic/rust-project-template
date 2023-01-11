@@ -12,6 +12,6 @@ workspace = "../.."
 
 [dependencies]
 
-thiserror = "~1.0"
+thiserror = { workspace = true }
 
-log = "~0.4"
+log = { workspace = true }
