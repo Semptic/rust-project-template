@@ -20,7 +20,7 @@ log = { workspace = true }
 {{project-name}}-lib-a = { path = "../../libs/lib-a", version = "0.1.0"  }
 {{project-name}}-lib-b = { path = "../../libs/lib-b", version = "0.1.0"  }
 
-clap = { version = "~4.1", features = ["derive"] }
+clap = { version = "~4.2", features = ["derive"] }
 clap-verbosity-flag = "~2.0"
 
 anyhow = "~1.0"
